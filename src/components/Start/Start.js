@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import './start.scss'
 
 export default function Start({ setUsername }) {
 	const inputRef = useRef()

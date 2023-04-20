@@ -1,11 +1,12 @@
 import './base.scss'
-import { useEffect, useMemo, useState } from 'react'	
+import { useEffect, useMemo, useState } from 'react'
 import Quiz from './components/Quiz/Quiz'
 import Start from './components/Start/Start'
 import Timer from './components/Timer/Timer'
 
 function App() {
 	const [username, setUsername] = useState(null)
+	const [timeOut, setTimeOut] = useState(false)
 	const [questionNumber, setQuestionNumber] = useState(1)
 	const [earned, setEarned] = useState('$ 0')
 
@@ -111,10 +112,25 @@ function App() {
 			) : (
 				<>
 					<div className="main">
-						
-						<div className="main__quiz">
-							<Quiz data={data} questionNumber={questionNumber} setQuestionNumber={setQuestionNumber} />
-						</div>
+						{timeOut ? (
+							<h1 className="endText">You earned: {earned}</h1>
+						) : (
+							<>
+								<div className="top">
+									<div className="timer">
+										<Timer setTimeOut={setTimeOut} questionNumber={questionNumber} />
+									</div>
+								</div>
+								<div className="main__quiz">
+									<Quiz
+										data={data}
+										questionNumber={questionNumber}
+										setQuestionNumber={setQuestionNumber}
+										setTimeOut={setTimeOut}
+									/>
+								</div>
+							</>
+						)}
 					</div>
 					<div className="money">
 						<ul className="money__list">
