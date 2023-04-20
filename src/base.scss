@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -8,7 +10,8 @@ html {
 	font-size: 62.5%;
 	font-family: 'Roboto', sans-serif;
 }
-.app {
+
+.App {
 	font-size: 2rem;
 	height: 100vh;
 	display: flex;
@@ -17,10 +20,20 @@ html {
 }
 
 .main {
+	display: flex;
+	align-items: flex-end;
 	width: 80%;
-	background-image: url(../assets/background-small.jpg);
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #050000), url(./assets/background-small.jpg);
 	background-size: cover;
 	background-position: center;
+
+	&__quiz {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 50%;
+		width: 100%;
+	}
 }
 
 .money {

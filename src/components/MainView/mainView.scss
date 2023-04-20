@@ -1,0 +1,54 @@
+// .main {
+// 	display: flex;
+// 	align-items: flex-end;
+// 	width: 80%;
+// 	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #050000), url(../../assets/background-big.jpg);
+// 	background-size: cover;
+// 	background-position: center;
+
+// 	&__quiz {
+// 		display: flex;
+// 		justify-content: center;
+// 		align-items: center;
+// 		height: 50%;
+// 		width: 100%;
+// 	}
+// }
+
+// .money {
+// 	width: 20%;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+
+// 	&__list {
+// 		list-style-type: none;
+// 		width: 100%;
+// 		padding: 3rem;
+
+// 		&-item {
+// 			display: flex;
+// 			align-items: center;
+// 			padding: 1rem;
+// 			margin: 0.5rem 0;
+// 			border-radius: 5px;
+
+// 			&--number {
+// 				font-size: 1.8rem;
+// 				font-weight: 100;
+// 				width: 30%;
+// 			}
+
+// 			&--amount {
+// 				font-size: 2rem;
+// 				font-weight: 300;
+// 				text-align: center;
+// 				width: 70%;
+// 			}
+// 		}
+
+// 		&-item.active {
+// 			background-color: green;
+// 		}
+// 	}
+// }

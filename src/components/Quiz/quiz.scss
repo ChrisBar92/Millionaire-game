@@ -1,0 +1,87 @@
+.quiz {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+
+	&__question {
+		width: 80%;
+		border: 3px solid #fff;
+		text-align: center;
+		padding: 2rem;
+		border-radius: 10px;
+		font-size: 3rem;
+		background: linear-gradient(#0e0124, #22074d);
+	}
+
+	&__answers {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	&__answer {
+		width: 35%;
+		padding: 1rem;
+		text-align: center;
+		border: 2px solid #fff;
+		font-size: 2.4rem;
+		font-weight: 300;
+		border-radius: 15px;
+		background: linear-gradient(#0e0124, #22074d);
+		margin: 0 1rem 2rem;
+		cursor: pointer;
+
+		&:hover,
+		&.active {
+			background: mediumblue;
+		}
+
+		&.correct {
+			animation: correct 5s ease forwards;
+		}
+
+		&.wrong {
+			animation: wrong 5s ease forwards;
+		}
+	}
+}
+
+@keyframes correct {
+	0%,
+	22%,
+	42% {
+		background: mediumblue;
+	}
+
+	20%,
+	40%,
+	60% {
+		background: linear-gradient(#0e0124, #22074d);
+	}
+	62%,
+	100% {
+		background: rgb(0, 90, 0);
+	}
+}
+
+@keyframes wrong {
+	0%,
+	22%,
+	42% {
+		background: mediumblue;
+	}
+
+	20%,
+	40%,
+	60% {
+		background: linear-gradient(#0e0124, #22074d);
+	}
+	62%,
+	100% {
+		background: rgb(180, 0, 0);
+	}
+}
