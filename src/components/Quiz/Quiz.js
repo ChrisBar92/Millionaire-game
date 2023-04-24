@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import useSound from 'use-sound'
 import badanswer from '../../assets/bad-answer.mp3'
 import correctanswer from '../../assets/good-answer.mp3'
 import play from '../../assets/lets-play.mp3'
 import './quiz.scss'
-// import MainView from '../MainView/MainView'
 
-export default function Trivia({ data, questionNumber, setQuestionNumber, setTimeOut }) {
+const Quiz = ({ data, questionNumber, setQuestionNumber, setTimeOut }) => {
 	const [question, setQuestion] = useState(null)
 	const [selectedAnswer, setSelectedAnswer] = useState(null)
-	const [className, setClassName] = useState('answer')
+	const [className, setClassName] = useState('quiz__answer')
 	const [letsPlay] = useSound(play)
 	const [correctAnswer] = useSound(correctanswer)
 	const [wrongAnswer] = useSound(badanswer)
@@ -28,11 +27,11 @@ export default function Trivia({ data, questionNumber, setQuestionNumber, setTim
 		}, duration)
 	}
 
-	const handleClick = a => {
-		setSelectedAnswer(a)
-		setClassName('answer active')
-		delay(3000, () => {
-			setClassName(a.correct ? 'answer correct' : 'answer wrong')
+	const handleClick = answ => {
+		setSelectedAnswer(answ)
+		setClassName('quiz__answer active')
+		delay(2000, () => {
+			setClassName(answ.correct ? 'quiz__answer correct' : 'quiz__answer wrong')
 		})
 		// setTimeout(() => {
 		//   setClassName(a.correct ? "answer correct" : "answer wrong");
@@ -40,7 +39,7 @@ export default function Trivia({ data, questionNumber, setQuestionNumber, setTim
 
 		// setTimeout(() => {
 		delay(5000, () => {
-			if (a.correct) {
+			if (answ.correct) {
 				correctAnswer()
 				delay(1000, () => {
 					setQuestionNumber(prev => prev + 1)
@@ -66,14 +65,18 @@ export default function Trivia({ data, questionNumber, setQuestionNumber, setTim
 		<div className="quiz">
 			<div className="quiz__question">{question?.question}</div>
 			<div className="quiz__answers">
-				{question?.answers.map(a => (
+				{question?.answers.map(answ => (
 					<div
-						className={selectedAnswer === a ? className : 'quiz__answer'}
-						onClick={() => !selectedAnswer && handleClick(a)}>
-						{a.text}
+						className={selectedAnswer === answ ? className : 'quiz__answer'}
+						onClick={() => !selectedAnswer && handleClick(answ)}>
+						{answ.text}
+						console.log({answ.text})
+						console.log('fdf')
 					</div>
 				))}
 			</div>
 		</div>
 	)
 }
+
+export default Quiz

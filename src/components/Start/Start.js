@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import './start.scss'
 
-export default function Start({ setUsername }) {
+const Start = ({ setUsername }) => {
 	const inputRef = useRef()
 
 	const handleClick = () => {
@@ -10,10 +10,12 @@ export default function Start({ setUsername }) {
 
 	return (
 		<div className="start">
-			<input className="startInput" placeholder="enter your name" ref={inputRef} />
-			<button className="startButton" onClick={handleClick}>
+			<input className="start__input" placeholder="enter your name" ref={inputRef} />
+			<button className="start__button" onClick={handleClick}>
 				Start
 			</button>
 		</div>
 	)
 }
+
+export default Start

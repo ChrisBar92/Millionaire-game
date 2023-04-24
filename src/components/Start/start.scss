@@ -8,8 +8,8 @@
 }
 
 .start {
-	width: 250px;
-	height: 100px;
+	width: 25rem;
+	height: 10rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -20,27 +20,27 @@
 	left: 0;
 	right: 0;
 	margin: auto;
-}
 
-.startInput {
-	width: 100%;
-	height: 30px;
-	border: none;
-	border-radius: 5px;
-	text-align: center;
-	font-size: 18px;
-}
+	&__input {
+		width: 100%;
+		height: 3rem;
+		border: none;
+		border-radius: 5px;
+		text-align: center;
+		font-size: 1.8rem;
 
-.startInput:focus {
-	outline: none;
-}
+		&:focus {
+			outline: none;
+		}
+	}
 
-.startButton {
-	width: 100%;
-	height: 30px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	font-size: 18px;
-	font-weight: 500;
+	&__button {
+		width: 100%;
+		height: 30px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 18px;
+		font-weight: 500;
+	}
 }
